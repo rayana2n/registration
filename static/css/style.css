@@ -1,0 +1,22 @@
+h1{
+    font-size: 46px;
+    color: rgb(37, 86, 179);
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    background-color: rgb(73, 120, 209);
+    border-radius: 5px;
+
+    
+}
+body{
+    background-color: cornflowerblue;
+     
+}
+p{
+    color: white;
+    font-size: 26px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    padding-top: 50px;
+
+}

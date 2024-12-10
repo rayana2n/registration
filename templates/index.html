@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>{% block title %} Башкы бет {% endblock %}</title>
+</head>
+<body>
+
+    <h1>Колдонуучуларды каттоо</h1>
+    <div class="register">
+        <form action = "create/" method = "POST">
+            {% csrf_token %}
+            <label for="">Aтынызды жазыныз</label> 
+            <input type="text" name ='name' id="" placeholder="Rayana">
+            <label for="">Жашынызды жазыныз</label>
+             <input type="number" name="age" id="">
+             <input type="submit" value="Сактоо">
+            
+        </form>
+    </div>
+
+    <table border = "2">
+        <th>Колдонуучунун номери</th>
+        <th>Колдонуучунун аты</th>
+        <th>Колдонуучунун жашы</th>
+        <th>Функция</th>
+        {% for person in user %}
+
+        <tr>
+            <td> {{ person.id }} </td>
+            <td> {{ person.name }} </td>
+            <td> {{ person.age }} </td> 
+            <td> <a href="/edit/{{ person.id }}">Озгортуу</a> 
+                <a href="/delete/{{person.id}}">Очуруу</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html> 
